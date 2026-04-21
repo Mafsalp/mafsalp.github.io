@@ -1,4 +1,15 @@
+# robots.txt — afsal.tech
+# Personal portfolio of Afsal Pallikkara
+
 User-agent: *
 Allow: /
 
+# Block common CMS and admin paths (defensive, not currently in use)
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /admin/
+Disallow: /.env
+Disallow: /.git/
+
+# Sitemap (update with your hosting provider if you generate one)
 Sitemap: https://afsal.tech/sitemap.xml

@@ -7,225 +7,271 @@
 <meta name="description" content="Afsal Pallikkara - Infrastructure and Cloud Lead, CISSP. Zero Trust architecture, Microsoft Azure, enterprise cybersecurity. UAE.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
 ::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:#f4f5f9}
-::-webkit-scrollbar-thumb{background:#1B3A6B;border-radius:2px}
+::-webkit-scrollbar-track{background:#0B1829}
+::-webkit-scrollbar-thumb{background:#C4956C;border-radius:2px}
 :root{
-  --white:#FFFFFF;
-  --canvas:#F5F7FC;
-  --canvas2:#EBEFF8;
-  --ink:#0F1724;
-  --ink2:#1E2B3D;
-  --body:#4A5568;
-  --muted:#8896AA;
-  --rule:#DDE3EE;
-  --navy:#1B3A6B;
-  --navy2:#2451A3;
-  --nbg:rgba(27,58,107,0.06);
-  --nbdr:rgba(27,58,107,0.22);
+  --dark:#0B1829;--dark2:#0F2035;--dark3:#152944;
+  --navy:#1B3A6B;--navy2:#2451A3;
+  --gold:#C4956C;--gold2:#E8C4A0;--gold-dim:rgba(196,149,108,.15);
+  --white:#FFFFFF;--off:#F8F9FC;--canvas:#F2F4F8;
+  --ink:#0F1724;--body-c:#4A5568;--muted:#8896AA;--rule:#DDE3EE;
+  --nbg:rgba(27,58,107,.06);--nbdr:rgba(27,58,107,.18);
   --serif:'Libre Baskerville',Georgia,serif;
   --sans:'Source Sans 3',system-ui,sans-serif;
-  --max:1120px
+  --max:1140px;--nav-h:64px
 }
-body{background:var(--white);color:var(--body);font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.75}
+body{background:var(--white);color:var(--body-c);font-family:var(--sans);font-size:16px;line-height:1.75}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);transition:box-shadow .3s}
-nav.sc{box-shadow:0 2px 20px rgba(0,0,0,.07)}
-.nl{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink)}
-.nl span{color:var(--navy);font-weight:400;font-style:italic}
-.nm{display:flex;align-items:center;gap:34px;list-style:none}
-.nm a{font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);transition:color .2s}
-.nm a:hover{color:var(--navy)}
-.nc{padding:8px 22px;background:var(--navy);color:#fff!important;border-radius:4px;font-size:.73rem!important;font-weight:600!important;letter-spacing:.1em!important;transition:background .2s!important}
-.nc:hover{background:var(--navy2)!important}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 52px;background:transparent;transition:background .4s,box-shadow .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.sc{background:rgba(11,24,41,.92);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:rgba(255,255,255,.07);box-shadow:0 2px 32px rgba(0,0,0,.3)}
+nav.light{background:rgba(255,255,255,.96);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--rule);box-shadow:0 2px 24px rgba(0,0,0,.07)}
+.nl{font-family:var(--serif);font-size:1.12rem;font-weight:700;color:#fff;flex-shrink:0;transition:color .3s}
+nav.light .nl{color:var(--ink)}
+.nl em{color:var(--gold);font-weight:400;font-style:italic}
+nav.light .nl em{color:var(--navy)}
+.nm{display:flex;align-items:center;gap:36px;list-style:none}
+.nm a{font-size:.72rem;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.55);transition:color .2s}
+.nm a:hover{color:#fff}
+nav.light .nm a{color:var(--muted)}
+nav.light .nm a:hover{color:var(--navy)}
+.nc{padding:7px 20px;border:1.5px solid rgba(255,255,255,.22);color:rgba(255,255,255,.88)!important;border-radius:3px;font-size:.7rem!important;font-weight:600!important;letter-spacing:.12em!important;transition:all .2s!important}
+.nc:hover{background:rgba(255,255,255,.1)!important;border-color:rgba(255,255,255,.5)!important}
+nav.light .nc{border-color:var(--navy)!important;color:var(--navy)!important}
+nav.light .nc:hover{background:var(--navy)!important;color:#fff!important}
+.hbg{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;padding:6px;cursor:pointer;border:none;background:transparent}
+.hbg span{display:block;width:22px;height:1.5px;background:#fff;border-radius:2px;transition:all .3s cubic-bezier(.4,0,.2,1)}
+nav.light .hbg span{background:var(--ink)}
+.hbg.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hbg.open span:nth-child(2){opacity:0}
+.hbg.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob-nav{position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(11,24,41,.97);backdrop-filter:blur(20px);max-height:0;overflow:hidden;z-index:290;transition:max-height .38s cubic-bezier(.4,0,.2,1)}
+.mob-nav.open{max-height:360px}
+.mob-nav a{display:block;padding:13px 28px;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);border-bottom:1px solid rgba(255,255,255,.05);transition:color .2s,background .2s}
+.mob-nav a:hover{color:#fff;background:rgba(255,255,255,.04)}
+.mob-nav .mnc{margin:14px 28px 20px;display:block;text-align:center;padding:11px;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8);border-radius:3px;font-size:.72rem;font-weight:600;letter-spacing:.12em}
 
 /* HERO */
-#hero{min-height:100vh;display:flex;align-items:center;padding:100px 48px 80px;position:relative;overflow:hidden;background:var(--white)}
-#hero::before{content:'';position:absolute;top:0;right:0;width:52%;height:100%;background:linear-gradient(135deg,var(--canvas) 0%,var(--canvas2) 100%);clip-path:polygon(9% 0%,100% 0%,100% 100%,0% 100%);pointer-events:none}
-#hero::after{content:'';position:absolute;top:0;right:0;width:52%;height:100%;background-image:radial-gradient(circle,var(--rule) 1.2px,transparent 1.2px);background-size:26px 26px;clip-path:polygon(9% 0%,100% 0%,100% 100%,0% 100%);opacity:.55;pointer-events:none}
-.hi{max-width:var(--max);margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:72px;align-items:center;position:relative;z-index:1}
-.he{display:inline-flex;align-items:center;gap:10px;font-size:.69rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-bottom:20px}
-.he::before{content:'';width:22px;height:2px;background:var(--navy)}
-.hn{font-family:var(--serif);font-size:clamp(3rem,5.5vw,5.2rem);font-weight:700;color:var(--ink);line-height:1.08;letter-spacing:-.02em;margin-bottom:16px}
-.hr{font-family:var(--serif);font-size:1.15rem;font-weight:400;font-style:italic;color:var(--navy);margin-bottom:26px;display:flex;align-items:center;gap:12px}
-.hr::after{content:'';flex:0 0 44px;height:1px;background:var(--nbdr)}
-.hs{font-size:1.02rem;line-height:1.85;color:var(--body);max-width:510px;margin-bottom:38px}
-.hs strong{color:var(--ink);font-weight:600}
-.hb{display:flex;gap:12px;flex-wrap:wrap}
-.hst{display:flex;gap:32px;flex-wrap:wrap;margin-top:48px;padding-top:36px;border-top:1px solid var(--rule)}
-.sv{font-family:var(--serif);font-size:2.3rem;font-weight:700;color:var(--ink);line-height:1}
-.sv sup{font-size:1rem;color:var(--navy);vertical-align:super}
-.sl{font-size:.67rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:4px}
-.hcard{background:var(--white);border:1px solid var(--rule);border-radius:12px;overflow:hidden;box-shadow:0 6px 40px rgba(27,58,107,.1),0 1px 4px rgba(0,0,0,.04);position:relative;z-index:2}
-.ct{background:var(--navy);padding:28px;border-bottom:1px solid rgba(255,255,255,.1)}
-.cav{width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.45rem;font-weight:700;color:rgba(255,255,255,.88);margin-bottom:14px}
-.cnm{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:3px}
-.crl{font-size:.77rem;color:rgba(255,255,255,.6)}
-.cb{padding:18px 22px}
-.crow{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:7px;margin-bottom:8px;background:var(--canvas);border:1px solid var(--rule);transition:border-color .2s}
-.crow:last-child{margin-bottom:0}
-.crow:hover{border-color:var(--nbdr)}
-.ci{width:30px;height:30px;flex-shrink:0;border-radius:6px;background:var(--nbg);border:1px solid var(--nbdr);display:flex;align-items:center;justify-content:center;font-size:.85rem}
-.clb{font-size:.8rem;font-weight:600;color:var(--ink);line-height:1.2}
-.cls{font-size:.68rem;color:var(--muted)}
+#hero{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 60px) 52px 80px;position:relative;overflow:hidden;background:var(--dark)}
+#hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.062) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
+#hero::after{content:'';position:absolute;inset:0;background:linear-gradient(108deg,var(--dark) 36%,rgba(11,24,41,.4) 70%,transparent 100%);pointer-events:none}
+.hero-glow{position:absolute;width:700px;height:700px;right:-100px;top:50%;transform:translateY(-50%);background:radial-gradient(circle,rgba(196,149,108,.1) 0%,transparent 65%);pointer-events:none;z-index:1}
+.hi{max-width:var(--max);margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 360px;gap:80px;align-items:center;position:relative;z-index:2}
+.h-eye{display:inline-flex;align-items:center;gap:12px;font-size:.65rem;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+.h-eye::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hn{font-family:var(--serif);font-size:clamp(3.6rem,6vw,5.8rem);font-weight:700;color:#fff;line-height:1.02;letter-spacing:-.03em;margin-bottom:20px}
+.hn em{color:var(--gold);font-style:normal}
+.h-cred{display:flex;align-items:center;gap:14px;font-size:.78rem;font-weight:500;letter-spacing:.05em;color:rgba(255,255,255,.4);margin-bottom:28px;flex-wrap:wrap}
+.h-cred strong{color:rgba(255,255,255,.78);font-weight:600}
+.h-dot{width:3px;height:3px;border-radius:50%;background:rgba(255,255,255,.22)}
+.h-bio{font-size:1rem;line-height:1.88;color:rgba(255,255,255,.52);max-width:520px;margin-bottom:40px}
+.h-bio strong{color:rgba(255,255,255,.8);font-weight:600}
+.h-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:56px}
+.btn-gold{display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:var(--gold);color:#fff;border-radius:3px;border:1.5px solid var(--gold);font-size:.77rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;transition:all .22s}
+.btn-gold:hover{background:#b8854f;border-color:#b8854f;transform:translateY(-1px);box-shadow:0 8px 28px rgba(196,149,108,.4)}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:transparent;color:rgba(255,255,255,.65);border-radius:3px;border:1.5px solid rgba(255,255,255,.18);font-size:.77rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;transition:all .22s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.45);color:#fff}
+.h-stats{display:flex;gap:36px;flex-wrap:wrap;padding-top:40px;border-top:1px solid rgba(255,255,255,.08)}
+.sv{font-family:var(--serif);font-size:2.5rem;font-weight:700;color:#fff;line-height:1}
+.sv sup{font-size:1.1rem;color:var(--gold);vertical-align:super}
+.sl{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.32);margin-top:5px}
+.h-card{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.11);border-radius:14px;overflow:hidden;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 24px 80px rgba(0,0,0,.4);position:relative}
+.h-card::before{content:'';position:absolute;top:-1px;left:20px;right:20px;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent)}
+.hc-top{padding:28px 26px 22px;border-bottom:1px solid rgba(255,255,255,.07)}
+.hc-av{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--dark3),var(--navy));border:2px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem;font-weight:700;color:rgba(255,255,255,.78);margin-bottom:14px}
+.hc-nm{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:#fff;margin-bottom:3px}
+.hc-rl{font-size:.72rem;color:rgba(255,255,255,.4)}
+.hc-body{padding:16px 20px}
+.hc-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;margin-bottom:7px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);transition:background .2s,border-color .2s}
+.hc-row:last-child{margin-bottom:0}
+.hc-row:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.13)}
+.hc-ico{width:30px;height:30px;flex-shrink:0;border-radius:6px;background:rgba(196,149,108,.14);border:1px solid rgba(196,149,108,.24);display:flex;align-items:center;justify-content:center}
+.hc-ico svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hc-lbl{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.8);line-height:1.2}
+.hc-sub{font-size:.65rem;color:rgba(255,255,255,.33)}
+.hc-badge{margin:0 20px 20px;display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:7px;background:rgba(74,222,128,.06);border:1px solid rgba(74,222,128,.18)}
+.hc-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;flex-shrink:0;animation:gpulse 2.5s ease-in-out infinite}
+@keyframes gpulse{0%,100%{box-shadow:0 0 0 2px rgba(74,222,128,.2)}50%{box-shadow:0 0 0 6px rgba(74,222,128,.04)}}
+.hc-badge-t{font-size:.67rem;font-weight:600;color:#4ADE80;letter-spacing:.1em;text-transform:uppercase}
 
-/* BUTTONS */
-.bs{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:var(--navy);color:#fff;border-radius:4px;border:1.5px solid var(--navy);font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;transition:all .22s}
-.bs:hover{background:var(--navy2);border-color:var(--navy2)}
-.bg{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:transparent;color:var(--navy);border-radius:4px;border:1.5px solid var(--nbdr);font-size:.8rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;transition:all .22s}
-.bg:hover{border-color:var(--navy);background:var(--nbg)}
+/* MARQUEE */
+.mq-wrap{background:var(--dark2);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:14px 0;overflow:hidden;position:relative}
+.mq-wrap::before,.mq-wrap::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
+.mq-wrap::before{left:0;background:linear-gradient(90deg,var(--dark2),transparent)}
+.mq-wrap::after{right:0;background:linear-gradient(-90deg,var(--dark2),transparent)}
+.mq-track{display:flex;width:max-content;animation:mq 34s linear infinite}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.mq-wrap:hover .mq-track{animation-play-state:paused}
+.m-tag{display:inline-flex;align-items:center;gap:8px;padding:5px 18px;font-size:.67rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);white-space:nowrap}
+.m-tag::before{content:'·';color:var(--gold);opacity:.55}
 
 /* SECTIONS */
-.sec{padding:96px 48px}
-.sa{background:var(--canvas);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
-.inn{max-width:var(--max);margin:0 auto}
-.stag{display:inline-flex;align-items:center;gap:10px;font-size:.67rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--navy);margin-bottom:12px}
-.stag::before{content:'';width:20px;height:2px;background:var(--navy)}
-.sttl{font-family:var(--serif);font-size:clamp(1.9rem,3.2vw,2.8rem);font-weight:700;color:var(--ink);line-height:1.18;letter-spacing:-.02em;margin-bottom:12px}
-.ssub{font-size:1rem;color:var(--body);max-width:500px;line-height:1.75}
-.sh{margin-bottom:52px}
-hr{border:none;height:1px;background:linear-gradient(90deg,var(--rule),transparent);margin:0}
+.sec{padding:100px 52px;position:relative}
+.sec-alt{background:var(--canvas)}
+.wrap{max-width:var(--max);margin:0 auto}
+.s-tag{display:inline-flex;align-items:center;gap:10px;font-size:.63rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.s-tag::before{content:'';width:24px;height:1.5px;background:var(--gold)}
+.s-title{font-family:var(--serif);font-size:clamp(2rem,3.4vw,2.9rem);font-weight:700;color:var(--ink);line-height:1.16;letter-spacing:-.02em;margin-bottom:14px}
+.s-sub{font-size:.97rem;color:var(--body-c);max-width:520px;line-height:1.78}
+.s-head{margin-bottom:56px}
+.s-num{position:absolute;top:60px;right:52px;font-family:var(--serif);font-size:9rem;font-weight:700;color:rgba(27,58,107,.045);line-height:1;pointer-events:none;user-select:none}
+.sec-alt .s-num{color:rgba(27,58,107,.055)}
+.div-line{border:none;height:1px;background:linear-gradient(90deg,var(--rule) 60%,transparent);margin:0}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.4,0,.2,1),transform .7s cubic-bezier(.4,0,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+.rd1{transition-delay:.07s}.rd2{transition-delay:.15s}.rd3{transition-delay:.22s}
 
 /* ABOUT */
-.ag{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start}
-blockquote{padding:26px 30px;border-left:3px solid var(--navy);background:var(--nbg);border-radius:0 8px 8px 0;margin-bottom:24px}
-blockquote p{font-family:var(--serif);font-size:1.05rem;font-style:italic;color:var(--ink2);line-height:1.82}
-.ab{font-size:.95rem;color:var(--body);line-height:1.85;margin-bottom:14px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+blockquote{padding:28px 32px;border-left:3px solid var(--gold);background:linear-gradient(135deg,rgba(196,149,108,.05),rgba(196,149,108,.01));border-radius:0 10px 10px 0;margin-bottom:26px}
+blockquote p{font-family:var(--serif);font-size:1.06rem;font-style:italic;color:var(--ink);line-height:1.84}
+.ab{font-size:.94rem;color:var(--body-c);line-height:1.88;margin-bottom:14px}
 .ab strong{color:var(--ink);font-weight:600}
-.fl{display:flex;flex-direction:column}
-.fi{display:flex;align-items:flex-start;gap:16px;padding:17px 0;border-bottom:1px solid var(--rule);cursor:default;transition:all .2s}
-.fi:first-child{border-top:1px solid var(--rule)}
-.fi:hover .fin{color:var(--navy)}
-.fi:hover .fit{color:var(--navy)}
-.fin{font-family:var(--serif);font-size:.73rem;color:var(--muted);min-width:22px;padding-top:2px;transition:color .2s}
-.fit{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:3px;transition:color .2s}
-.fid{font-size:.77rem;color:var(--muted);line-height:1.55}
+.focus-list{display:flex;flex-direction:column}
+.focus-item{display:flex;align-items:flex-start;gap:18px;padding:18px 0;border-bottom:1px solid var(--rule);cursor:default;transition:all .2s}
+.focus-item:first-child{border-top:1px solid var(--rule)}
+.focus-item:hover .f-title{color:var(--navy)}
+.focus-item:hover .f-num{color:var(--gold)}
+.f-num{font-family:var(--serif);font-size:.72rem;color:var(--rule);min-width:24px;padding-top:2px;transition:color .25s;font-weight:700}
+.f-title{font-size:.87rem;font-weight:600;color:var(--ink);margin-bottom:4px;transition:color .25s}
+.f-desc{font-size:.77rem;color:var(--muted);line-height:1.6}
 
 /* SKILLS */
-.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
-.sc2{padding:26px 24px;background:var(--white);transition:background .2s}
-.sc2:hover{background:var(--canvas)}
-.sic{width:36px;height:36px;border-radius:7px;background:var(--nbg);border:1px solid var(--nbdr);display:flex;align-items:center;justify-content:center;font-size:.95rem;margin-bottom:12px}
-.stl{font-size:.84rem;font-weight:600;color:var(--ink);margin-bottom:11px}
-.tags2{display:flex;flex-wrap:wrap;gap:5px}
-.tag{padding:3px 9px;background:var(--canvas2);border:1px solid var(--rule);border-radius:3px;font-size:.67rem;font-weight:500;color:var(--body);transition:all .15s}
-.sc2:hover .tag{border-color:var(--nbdr);color:var(--ink2)}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.skill-cell{padding:28px 26px;background:var(--white);transition:background .2s}
+.skill-cell:hover{background:var(--off)}
+.sk-icon{width:38px;height:38px;border-radius:8px;background:var(--nbg);border:1px solid var(--nbdr);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.sk-icon svg{width:18px;height:18px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sk-title{font-size:.84rem;font-weight:700;color:var(--ink);margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{padding:3px 9px;background:var(--canvas);border:1px solid var(--rule);border-radius:3px;font-size:.65rem;font-weight:500;color:var(--body-c);transition:all .15s}
+.skill-cell:hover .tag{border-color:var(--nbdr);color:var(--ink)}
 
-/* EXPERIENCE */
-.el{display:flex;flex-direction:column}
-.ei{display:grid;grid-template-columns:180px 1fr;gap:48px;padding:40px 0;border-bottom:1px solid var(--rule);align-items:start}
-.ei:first-child{padding-top:0}
-.ei:last-child{border-bottom:none;padding-bottom:0}
-.ei>div:first-child{padding-top:5px}
-.ep{font-size:.71rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
-.ebdg{display:inline-block;padding:3px 10px;background:var(--navy);color:#fff;border-radius:3px;font-size:.61rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
-.et{font-size:.74rem;color:var(--muted);line-height:1.55}
-.erol{font-family:var(--serif);font-size:1.28rem;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.25}
-.esum{font-size:.9rem;color:var(--body);line-height:1.75;margin-bottom:16px}
-.epts{list-style:none;display:flex;flex-direction:column;gap:10px}
-.epts li{position:relative;padding-left:16px;font-size:.85rem;color:var(--body);line-height:1.65}
-.epts li::before{content:'';position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--navy)}
-.epts li strong{color:var(--ink);font-weight:600}
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;position:relative;padding-left:2px}
+.timeline::before{content:'';position:absolute;left:0;top:12px;bottom:0;width:1px;background:linear-gradient(180deg,var(--gold) 0%,var(--rule) 85%)}
+.tl-item{display:grid;grid-template-columns:180px 1fr;gap:52px;padding:0 0 52px;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-dot{position:absolute;left:-5px;top:12px;width:11px;height:11px;border-radius:50%;background:var(--white);border:2.5px solid var(--gold);box-shadow:0 0 0 4px rgba(196,149,108,.14);transition:border-color .2s}
+.tl-item:not(:first-child) .tl-dot{border-color:var(--rule);box-shadow:none}
+.tl-item:hover .tl-dot{border-color:var(--gold);box-shadow:0 0 0 4px rgba(196,149,108,.14)}
+.tl-left{padding-top:4px;padding-left:22px}
+.tl-date{font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--navy);margin-bottom:8px}
+.tl-badge{display:inline-block;padding:3px 10px;background:var(--gold);color:#fff;border-radius:3px;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.tl-meta{font-size:.72rem;color:var(--muted);line-height:1.55}
+.tl-role{font-family:var(--serif);font-size:1.26rem;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.24}
+.tl-sum{font-size:.9rem;color:var(--body-c);line-height:1.77;margin-bottom:16px}
+.tl-pts{list-style:none;display:flex;flex-direction:column;gap:9px}
+.tl-pts li{position:relative;padding-left:16px;font-size:.84rem;color:var(--body-c);line-height:1.65}
+.tl-pts li::before{content:'';position:absolute;left:0;top:.67em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.tl-pts li strong{color:var(--ink);font-weight:600}
 
-/* CERTS */
-.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.cc{padding:20px 18px;background:var(--white);border:1px solid var(--rule);border-radius:8px;display:flex;align-items:flex-start;gap:13px;transition:all .25s;position:relative;overflow:hidden}
-.cc::before{content:'';position:absolute;top:0;left:0;bottom:0;width:3px;background:var(--navy);transform:scaleY(0);transform-origin:bottom;transition:transform .28s}
-.cc:hover{border-color:var(--nbdr);box-shadow:0 4px 20px rgba(27,58,107,.09);transform:translateY(-2px)}
-.cc:hover::before{transform:scaleY(1)}
-.cico{width:38px;height:38px;flex-shrink:0;border-radius:7px;background:var(--nbg);border:1px solid var(--nbdr);display:flex;align-items:center;justify-content:center;font-size:1.05rem}
-.ccnm{font-family:var(--serif);font-size:.98rem;font-weight:700;color:var(--ink);margin-bottom:3px;line-height:1.2}
-.ccbd{font-size:.72rem;color:var(--muted);line-height:1.4;margin-bottom:7px}
-.ccst{display:inline-block;padding:2px 8px;background:var(--nbg);border:1px solid var(--nbdr);border-radius:3px;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+/* CERTIFICATIONS */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cert-card{padding:22px 20px;background:var(--white);border:1px solid var(--rule);border-radius:10px;display:flex;align-items:flex-start;gap:14px;transition:all .26s;position:relative;overflow:hidden}
+.cert-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--rule);transition:background .3s}
+.cert-card:hover{border-color:var(--nbdr);box-shadow:0 6px 28px rgba(27,58,107,.09);transform:translateY(-3px)}
+.cert-card:hover::after{background:linear-gradient(90deg,var(--navy),var(--navy2))}
+.cert-card.featured::after{background:linear-gradient(90deg,var(--gold),#d4a97c)}
+.cert-card.featured{border-color:rgba(196,149,108,.22)}
+.cert-card.featured:hover{box-shadow:0 6px 28px rgba(196,149,108,.18)}
+.cert-ico{width:40px;height:40px;flex-shrink:0;border-radius:8px;background:var(--nbg);border:1px solid var(--nbdr);display:flex;align-items:center;justify-content:center;margin-top:2px}
+.cert-card.featured .cert-ico{background:var(--gold-dim);border-color:rgba(196,149,108,.28)}
+.cert-ico svg{width:19px;height:19px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cert-card.featured .cert-ico svg{stroke:var(--gold)}
+.cert-name{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:4px;line-height:1.2}
+.cert-body{font-size:.72rem;color:var(--muted);line-height:1.45;margin-bottom:8px}
+.cert-st{display:inline-block;padding:2px 8px;border-radius:3px;font-size:.59rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.cert-st.active{background:var(--gold-dim);border:1px solid rgba(196,149,108,.28);color:var(--gold)}
+.cert-st.earned{background:var(--nbg);border:1px solid var(--nbdr);color:var(--navy)}
 
 /* INITIATIVES */
-.ig{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.ic{padding:26px;background:var(--white);border:1px solid var(--rule);border-radius:10px;transition:all .25s;position:relative;overflow:hidden}
-.ic::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform .32s}
-.ic:hover{border-color:var(--nbdr);box-shadow:0 8px 32px rgba(27,58,107,.09);transform:translateY(-2px)}
-.ic:hover::after{transform:scaleX(1)}
-.icat{display:inline-block;padding:3px 9px;background:var(--nbg);border:1px solid var(--nbdr);border-radius:3px;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:12px}
-.ittl{font-family:var(--serif);font-size:1.02rem;font-weight:700;color:var(--ink);margin-bottom:9px;line-height:1.3}
-.idsc{font-size:.84rem;color:var(--body);line-height:1.75;margin-bottom:18px}
-.ist{display:flex;gap:26px;margin-bottom:15px}
-.isv{font-family:var(--serif);font-size:1.45rem;font-weight:700;color:var(--ink);line-height:1}
-.isv span{color:var(--navy)}
-.isl{font-size:.64rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:3px}
-.tgr{display:flex;flex-wrap:wrap;gap:5px;padding-top:14px;border-top:1px solid var(--rule)}
+.init-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.init-card{padding:28px;background:var(--white);border:1px solid var(--rule);border-radius:12px;position:relative;overflow:hidden;transition:all .28s}
+.init-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),#d4a97c);transform:scaleY(0);transform-origin:top;transition:transform .32s cubic-bezier(.4,0,.2,1)}
+.init-card:hover{border-color:rgba(196,149,108,.22);box-shadow:0 12px 44px rgba(0,0,0,.07);transform:translateY(-3px)}
+.init-card:hover::before{transform:scaleY(1)}
+.init-cat{display:inline-block;padding:3px 10px;background:var(--nbg);border:1px solid var(--nbdr);border-radius:3px;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:14px}
+.init-title{font-family:var(--serif);font-size:1.04rem;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.init-desc{font-size:.84rem;color:var(--body-c);line-height:1.77;margin-bottom:20px}
+.init-stats{display:flex;gap:28px;margin-bottom:16px}
+.i-val{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);line-height:1}
+.i-val em{color:var(--gold);font-style:normal}
+.i-lbl{font-size:.62rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-top:4px}
+.init-tags{display:flex;flex-wrap:wrap;gap:5px;padding-top:16px;border-top:1px solid var(--rule)}
 
 /* CONTACT */
-.cong{display:grid;grid-template-columns:1fr 350px;gap:68px;align-items:start}
-.conh{font-family:var(--serif);font-size:clamp(2rem,3.8vw,3.2rem);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:16px}
-.conh em{font-style:italic;color:var(--navy)}
-.conp{font-size:.95rem;color:var(--body);line-height:1.8;max-width:450px;margin-bottom:32px}
-.conl{display:flex;flex-direction:column;gap:9px}
-.clnk{display:flex;align-items:center;gap:12px;padding:13px 16px;background:var(--canvas);border:1px solid var(--rule);border-radius:7px;transition:all .22s}
-.clnk:hover{border-color:var(--nbdr);background:var(--white);transform:translateX(4px);box-shadow:0 4px 16px rgba(27,58,107,.07)}
-.clic{width:34px;height:34px;flex-shrink:0;border-radius:6px;background:var(--nbg);border:1px solid var(--nbdr);display:flex;align-items:center;justify-content:center;font-size:.85rem}
-.cllb{font-size:.81rem;font-weight:600;color:var(--ink);margin-bottom:1px}
-.clvl{font-size:.72rem;color:var(--muted)}
-.adv{background:var(--navy);border-radius:10px;overflow:hidden;box-shadow:0 10px 44px rgba(27,58,107,.22)}
-.at{padding:26px;border-bottom:1px solid rgba(255,255,255,.1)}
-.pr{display:flex;align-items:center;gap:9px;margin-bottom:14px}
-.pd{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 3px rgba(74,222,128,.2);animation:pulse 2.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 3px rgba(74,222,128,.2)}50%{box-shadow:0 0 0 7px rgba(74,222,128,.05)}}
-.pl{font-size:.68rem;font-weight:700;color:#4ADE80;letter-spacing:.14em;text-transform:uppercase}
-.attl{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:#fff;margin-bottom:7px}
-.abdy{font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.65}
-.ai{padding:18px 26px;display:flex;flex-direction:column;gap:10px}
-.ait{display:flex;align-items:center;gap:9px;font-size:.8rem;color:rgba(255,255,255,.75)}
-.ait::before{content:'';width:4px;height:4px;flex-shrink:0;border-radius:50%;background:rgba(255,255,255,.35)}
-.af{padding:18px 26px;border-top:1px solid rgba(255,255,255,.1)}
-.bw{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;background:#fff;color:var(--navy);border-radius:4px;border:none;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;transition:background .2s;cursor:pointer;text-decoration:none}
-.bw:hover{background:var(--canvas)}
+.con-split{display:grid;grid-template-columns:1fr 360px;gap:72px;align-items:start}
+.con-title{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.4rem);font-weight:700;color:var(--ink);line-height:1.12;margin-bottom:18px}
+.con-title em{color:var(--navy);font-style:italic}
+.con-sub{font-size:.96rem;color:var(--body-c);line-height:1.82;max-width:440px;margin-bottom:34px}
+.con-links{display:flex;flex-direction:column;gap:10px}
+.con-link{display:flex;align-items:center;gap:14px;padding:14px 18px;background:var(--white);border:1px solid var(--rule);border-radius:9px;transition:all .22s}
+.con-link:hover{border-color:var(--nbdr);box-shadow:0 4px 20px rgba(27,58,107,.07);transform:translateX(5px)}
+.con-ico{width:36px;height:36px;flex-shrink:0;border-radius:7px;background:var(--nbg);border:1px solid var(--nbdr);display:flex;align-items:center;justify-content:center}
+.con-ico svg{width:16px;height:16px;stroke:var(--navy);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.con-lbl{font-size:.81rem;font-weight:600;color:var(--ink);margin-bottom:1px}
+.con-val{font-size:.72rem;color:var(--muted)}
+.adv-panel{background:var(--dark);border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.adv-top{padding:26px;border-bottom:1px solid rgba(255,255,255,.07)}
+.adv-status{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.adv-dot{width:7px;height:7px;border-radius:50%;background:#4ADE80;animation:gpulse 2.5s ease-in-out infinite}
+.adv-avail{font-size:.64rem;font-weight:700;color:#4ADE80;letter-spacing:.15em;text-transform:uppercase}
+.adv-t{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:#fff;margin-bottom:8px}
+.adv-d{font-size:.8rem;color:rgba(255,255,255,.42);line-height:1.65}
+.adv-items{padding:18px 26px;display:flex;flex-direction:column;gap:11px}
+.adv-item{display:flex;align-items:flex-start;gap:10px;font-size:.8rem;color:rgba(255,255,255,.58)}
+.adv-item::before{content:'';flex-shrink:0;width:5px;height:5px;border-radius:50%;background:var(--gold);margin-top:8px;opacity:.7}
+.adv-btn-wrap{padding:18px 26px;border-top:1px solid rgba(255,255,255,.07)}
+.adv-btn{display:flex;align-items:center;justify-content:center;width:100%;padding:13px;background:var(--gold);color:#fff;border-radius:4px;font-family:var(--sans);font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;transition:all .2s}
+.adv-btn:hover{background:#b8854f;transform:translateY(-1px)}
 
 /* FOOTER */
-footer{padding:26px 48px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
-.fb{font-family:var(--serif);font-size:1.02rem;font-weight:700;color:var(--ink)}
-.fb span{color:var(--navy);font-weight:400;font-style:italic}
-.fc{font-size:.71rem;color:var(--muted)}
-.fn{display:flex;gap:22px;list-style:none}
-.fn a{font-size:.71rem;color:var(--muted);transition:color .2s}
-.fn a:hover{color:var(--navy)}
-
-
-
+footer{background:var(--dark);padding:32px 52px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,.06)}
+.f-brand{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:rgba(255,255,255,.65)}
+.f-brand em{color:var(--gold);font-style:italic;font-weight:400}
+.f-copy{font-size:.7rem;color:rgba(255,255,255,.26)}
+.f-nav{display:flex;gap:24px;list-style:none}
+.f-nav a{font-size:.7rem;color:rgba(255,255,255,.28);transition:color .2s;letter-spacing:.04em}
+.f-nav a:hover{color:rgba(255,255,255,.65)}
 
 /* RESPONSIVE */
-@media(max-width:1020px){
-  .hi{grid-template-columns:1fr}
-  .hcard{display:none}
-  #hero::before,#hero::after{display:none}
-  .ag{grid-template-columns:1fr;gap:36px}
-  .sg{grid-template-columns:repeat(2,1fr)}
-  .cg{grid-template-columns:repeat(2,1fr)}
-  .cong{grid-template-columns:1fr}
-  .ei{grid-template-columns:1fr;gap:6px}
-  .ei>div:first-child{padding-top:0}
+@media(max-width:1040px){
+  .hi{grid-template-columns:1fr}.h-card{display:none}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .con-split{grid-template-columns:1fr}
+  .tl-item{grid-template-columns:1fr;gap:8px}.tl-left{padding-left:24px}
+  .cert-grid{grid-template-columns:1fr 1fr}
+  .s-num{display:none}
 }
-@media(max-width:680px){
-  nav{padding:0 20px}
-  .nm{display:none}
-  .sec{padding:60px 22px}
-  #hero{padding:88px 22px 60px}
-  .hst{gap:22px}
-  .sg{grid-template-columns:1fr}
-  .ig{grid-template-columns:1fr}
-  .cg{grid-template-columns:1fr 1fr}
-  footer{flex-direction:column;align-items:flex-start;padding:22px}
+@media(max-width:768px){
+  nav{padding:0 22px}.nm{display:none}.hbg{display:flex}
+  .sec{padding:72px 24px}
+  #hero{padding:calc(var(--nav-h) + 44px) 24px 60px}
+  .h-stats{gap:22px}
+  .skills-grid{grid-template-columns:1fr 1fr}
+  .init-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr 1fr}
+  footer{padding:26px 24px;flex-direction:column;align-items:flex-start;gap:12px}
+}
+@media(max-width:500px){
+  .cert-grid,.skills-grid{grid-template-columns:1fr}
+  .hn{font-size:3.2rem}
 }
 </style>
 </head>
 <body>
 
 <nav id="nav">
-  <div class="nl">Afsal <span>Pallikkara</span></div>
+  <div class="nl">Afsal <em>Pallikkara</em></div>
   <ul class="nm">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -234,333 +280,253 @@ footer{padding:26px 48px;border-top:1px solid var(--rule);display:flex;justify-c
     <li><a href="#initiatives">Initiatives</a></li>
     <li><a href="#contact" class="nc">Contact</a></li>
   </ul>
+  <button class="hbg" id="hbg" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+<div class="mob-nav" id="mobnav">
+  <a href="#about" class="ml">About</a>
+  <a href="#skills" class="ml">Skills</a>
+  <a href="#experience" class="ml">Experience</a>
+  <a href="#certifications" class="ml">Credentials</a>
+  <a href="#initiatives" class="ml">Initiatives</a>
+  <a href="#contact" class="mnc ml">Contact</a>
+</div>
 
 <!-- HERO -->
 <section id="hero">
+  <div class="hero-glow"></div>
   <div class="hi">
-    <div>
-      <div class="he">Infrastructure &amp; Cloud Lead &nbsp;&middot;&nbsp; UAE</div>
-      <h1 class="hn">Afsal<br>Pallikkara</h1>
-      <div class="hr">CISSP &nbsp;&middot;&nbsp; Microsoft Azure &nbsp;&middot;&nbsp; Zero Trust</div>
-      <p class="hs">I build infrastructure that <strong>organisations can trust</strong> and security frameworks that <strong>scale without friction.</strong> A decade of enterprise-grade delivery across cloud architecture, cybersecurity, and digital transformation in the UAE.</p>
-      <div class="hb">
-        <a href="#initiatives" class="bs">View Initiatives &rarr;</a>
-        <a href="#contact" class="bg">Get In Touch</a>
+    <div class="reveal">
+      <div class="h-eye">Infrastructure &amp; Cloud Lead &nbsp;&middot;&nbsp; United Arab Emirates</div>
+      <h1 class="hn">Afsal<br><em>Pallikkara</em></h1>
+      <div class="h-cred">
+        <strong>CISSP</strong><span class="h-dot"></span>
+        <strong>Microsoft Azure</strong><span class="h-dot"></span>
+        <strong>Zero Trust</strong>
       </div>
-      <div class="hst">
+      <p class="h-bio">I build infrastructure that <strong>organisations can trust</strong> and security frameworks that <strong>scale without friction.</strong> A decade of enterprise-grade delivery across cloud architecture, cybersecurity, and digital transformation in the UAE.</p>
+      <div class="h-btns">
+        <a href="#initiatives" class="btn-gold">View Initiatives &rarr;</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+      <div class="h-stats">
         <div><div class="sv">10<sup>+</sup></div><div class="sl">Years Experience</div></div>
         <div><div class="sv">500<sup>+</sup></div><div class="sl">Endpoints Secured</div></div>
         <div><div class="sv">1,400<sup>+</sup></div><div class="sl">Users Migrated</div></div>
         <div><div class="sv">5<sup>+</sup></div><div class="sl">Environments Delivered</div></div>
       </div>
     </div>
-    <div class="hcard">
-      <div class="ct">
-        <div class="cav">AP</div>
-        <div class="cnm">Afsal Pallikkara</div>
-        <div class="crl">Infrastructure &amp; Cloud Lead &nbsp;&middot;&nbsp; UAE</div>
+    <div class="h-card reveal rd2">
+      <div class="hc-top">
+        <div class="hc-av">AP</div>
+        <div class="hc-nm">Afsal Pallikkara</div>
+        <div class="hc-rl">Infrastructure &amp; Cloud Lead &nbsp;&middot;&nbsp; UAE</div>
       </div>
-      <div class="cb">
-        <div class="crow"><div class="ci">&#128272;</div><div><div class="clb">CISSP Certified</div><div class="cls">ISC&sup2; &middot; Information Security</div></div></div>
-        <div class="crow"><div class="ci">&#9729;</div><div><div class="clb">Microsoft Azure</div><div class="cls">Entra ID &middot; Intune &middot; Defender Suite</div></div></div>
-        <div class="crow"><div class="ci">&#128737;</div><div><div class="clb">Zero Trust Architecture</div><div class="cls">Conditional Access &middot; DLP &middot; MFA</div></div></div>
-        <div class="crow"><div class="ci">&#128205;</div><div><div class="clb">United Arab Emirates</div><div class="cls">Open to Advisory Engagements</div></div></div>
+      <div class="hc-body">
+        <div class="hc-row"><div class="hc-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div><div class="hc-lbl">CISSP Certified</div><div class="hc-sub">ISC&sup2; &middot; Information Security</div></div></div>
+        <div class="hc-row"><div class="hc-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="hc-lbl">Microsoft Azure</div><div class="hc-sub">Entra ID &middot; Intune &middot; Defender Suite</div></div></div>
+        <div class="hc-row"><div class="hc-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="hc-lbl">Zero Trust Architecture</div><div class="hc-sub">Conditional Access &middot; DLP &middot; MFA</div></div></div>
+        <div class="hc-row"><div class="hc-ico"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="hc-lbl">United Arab Emirates</div><div class="hc-sub">Al Ain &middot; Abu Dhabi</div></div></div>
       </div>
+      <div class="hc-badge"><div class="hc-dot"></div><span class="hc-badge-t">Open to Advisory Engagements</span></div>
     </div>
   </div>
 </section>
 
-<hr>
+<!-- MARQUEE -->
+<div class="mq-wrap"><div class="mq-track">
+  <span class="m-tag">Microsoft Azure</span><span class="m-tag">Zero Trust</span><span class="m-tag">CISSP</span><span class="m-tag">Entra ID</span><span class="m-tag">Defender for Cloud</span><span class="m-tag">Sentinel SIEM</span><span class="m-tag">Intune MDM</span><span class="m-tag">Conditional Access</span><span class="m-tag">VMware ESXi</span><span class="m-tag">Dell VxRail</span><span class="m-tag">Cisco Catalyst</span><span class="m-tag">FortiGate</span><span class="m-tag">CheckPoint</span><span class="m-tag">Forescout NAC</span><span class="m-tag">Purview</span><span class="m-tag">Azure AVD</span><span class="m-tag">Veeam</span><span class="m-tag">XDR</span><span class="m-tag">Hyper-V</span><span class="m-tag">Red Hat Linux</span><span class="m-tag">Arcon PAM</span><span class="m-tag">BCDR</span><span class="m-tag">DLP</span>
+  <span class="m-tag">Microsoft Azure</span><span class="m-tag">Zero Trust</span><span class="m-tag">CISSP</span><span class="m-tag">Entra ID</span><span class="m-tag">Defender for Cloud</span><span class="m-tag">Sentinel SIEM</span><span class="m-tag">Intune MDM</span><span class="m-tag">Conditional Access</span><span class="m-tag">VMware ESXi</span><span class="m-tag">Dell VxRail</span><span class="m-tag">Cisco Catalyst</span><span class="m-tag">FortiGate</span><span class="m-tag">CheckPoint</span><span class="m-tag">Forescout NAC</span><span class="m-tag">Purview</span><span class="m-tag">Azure AVD</span><span class="m-tag">Veeam</span><span class="m-tag">XDR</span><span class="m-tag">Hyper-V</span><span class="m-tag">Red Hat Linux</span><span class="m-tag">Arcon PAM</span><span class="m-tag">BCDR</span><span class="m-tag">DLP</span>
+</div></div>
 
 <!-- ABOUT -->
 <section id="about" class="sec">
-  <div class="inn">
-    <div class="sh">
-      <div class="stag">About</div>
-      <h2 class="sttl">How I Think About<br>Enterprise Technology</h2>
-      <p class="ssub">Security and infrastructure are not cost centres &mdash; they are the foundation on which business velocity is built or broken.</p>
+  <div class="wrap">
+    <div class="s-num">01</div>
+    <div class="s-head reveal">
+      <div class="s-tag">About</div>
+      <h2 class="s-title">How I Think About<br>Enterprise Technology</h2>
+      <p class="s-sub">Security and infrastructure are not cost centres &mdash; they are the foundation on which business velocity is built or broken.</p>
     </div>
-    <div class="ag">
-      <div>
+    <div class="about-grid">
+      <div class="reveal rd1">
         <blockquote><p>&ldquo;The infrastructure decisions made today create the constraints or capabilities the business will live with for the next decade. Build for trust first, scale second, and convenience last.&rdquo;</p></blockquote>
         <p class="ab">With over a decade in UAE enterprise environments, I have led everything from first-ever cybersecurity programmes to greenfield Azure deployments, large-scale M365 migrations, and Zero Trust architecture rollouts. In my current role I lead infrastructure and cloud strategy across a multi-entity holding group &mdash; designing for resilience, security, and commercial alignment from the outset.</p>
         <p class="ab">My approach combines <strong>deep technical ownership</strong> with growing executive-level thinking &mdash; actively building toward a Director of Cloud &amp; Infrastructure track, backed by a structured certification roadmap and concurrent leadership development.</p>
       </div>
-      <div class="fl">
-        <div class="fi"><span class="fin">01</span><div><div class="fit">Zero Trust Architecture</div><div class="fid">Identity-first security across Conditional Access, Entra ID governance, and network segmentation &mdash; eliminating implicit trust at every layer.</div></div></div>
-        <div class="fi"><span class="fin">02</span><div><div class="fit">Azure Cloud Infrastructure</div><div class="fid">Greenfield to enterprise-scale Azure deployments with FinOps discipline, high availability, and governance built in from day one.</div></div></div>
-        <div class="fi"><span class="fin">03</span><div><div class="fit">Microsoft Security Stack</div><div class="fid">Defender for Cloud, XDR, Sentinel SIEM, and Purview &mdash; integrated as a coherent threat management platform, not isolated tools.</div></div></div>
-        <div class="fi"><span class="fin">04</span><div><div class="fit">Enterprise Network &amp; Datacentre</div><div class="fid">Cisco core infrastructure, FortiGate and CheckPoint firewalls, NAC, structured cabling, and hyperconverged datacentre environments.</div></div></div>
-        <div class="fi"><span class="fin">05</span><div><div class="fit">Digital Transformation Leadership</div><div class="fid">Translating infrastructure strategy into measurable business outcomes through vendor management, team mentoring, and programme delivery.</div></div></div>
+      <div class="focus-list reveal rd2">
+        <div class="focus-item"><span class="f-num">01</span><div><div class="f-title">Zero Trust Architecture</div><div class="f-desc">Identity-first security across Conditional Access, Entra ID governance, and network segmentation &mdash; eliminating implicit trust at every layer.</div></div></div>
+        <div class="focus-item"><span class="f-num">02</span><div><div class="f-title">Azure Cloud Infrastructure</div><div class="f-desc">Greenfield to enterprise-scale Azure deployments with FinOps discipline, high availability, and governance built in from day one.</div></div></div>
+        <div class="focus-item"><span class="f-num">03</span><div><div class="f-title">Microsoft Security Stack</div><div class="f-desc">Defender for Cloud, XDR, Sentinel SIEM, and Purview &mdash; integrated as a coherent threat platform, not isolated tools.</div></div></div>
+        <div class="focus-item"><span class="f-num">04</span><div><div class="f-title">Enterprise Network &amp; Datacentre</div><div class="f-desc">Cisco core infrastructure, FortiGate and CheckPoint firewalls, NAC, and hyperconverged datacentre environments.</div></div></div>
+        <div class="focus-item"><span class="f-num">05</span><div><div class="f-title">Digital Transformation Leadership</div><div class="f-desc">Translating infrastructure strategy into measurable business outcomes through vendor management, team mentoring, and programme delivery.</div></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<hr>
+<hr class="div-line">
 
 <!-- SKILLS -->
-<section id="skills" class="sec sa">
-  <div class="inn">
-    <div class="sh">
-      <div class="stag">Technical Skills</div>
-      <h2 class="sttl">Areas of Expertise</h2>
-      <p class="ssub">A decade of hands-on delivery across cloud, security, network, and enterprise systems in complex UAE environments.</p>
+<section id="skills" class="sec sec-alt">
+  <div class="wrap">
+    <div class="s-num">02</div>
+    <div class="s-head reveal">
+      <div class="s-tag">Technical Skills</div>
+      <h2 class="s-title">Areas of Expertise</h2>
+      <p class="s-sub">A decade of hands-on delivery across cloud, security, network, and enterprise systems in complex UAE environments.</p>
     </div>
-    <div class="sg">
-      <div class="sc2"><div class="sic">&#128272;</div><div class="stl">Cybersecurity &amp; GRC</div><div class="tags2"><span class="tag">CISSP</span><span class="tag">Zero Trust</span><span class="tag">Risk Management</span><span class="tag">Incident Response</span><span class="tag">Compliance</span><span class="tag">IT Auditing</span></div></div>
-      <div class="sc2"><div class="sic">&#9729;</div><div class="stl">Microsoft Azure &amp; M365</div><div class="tags2"><span class="tag">Entra ID</span><span class="tag">Intune MDM</span><span class="tag">Defender Suite</span><span class="tag">Sentinel SIEM</span><span class="tag">Purview</span><span class="tag">Azure AVD</span></div></div>
-      <div class="sc2"><div class="sic">&#127760;</div><div class="stl">Network &amp; Systems</div><div class="tags2"><span class="tag">Cisco Catalyst</span><span class="tag">FortiGate</span><span class="tag">CheckPoint</span><span class="tag">Network Design</span><span class="tag">Windows Server</span><span class="tag">Red Hat Linux</span></div></div>
-      <div class="sc2"><div class="sic">&#128737;</div><div class="stl">Security Tooling</div><div class="tags2"><span class="tag">Microsoft XDR</span><span class="tag">Forescout NAC</span><span class="tag">Arcon PAM</span><span class="tag">Nessus / Tenable</span><span class="tag">Cisco AMP</span><span class="tag">WAF</span></div></div>
-      <div class="sc2"><div class="sic">&#128187;</div><div class="stl">Infrastructure &amp; Virtualisation</div><div class="tags2"><span class="tag">Dell EMC VxRail</span><span class="tag">VMware ESXi</span><span class="tag">Hyper-V</span><span class="tag">Cisco Hyperflux</span><span class="tag">Veeam</span><span class="tag">Backup &amp; DR</span></div></div>
-      <div class="sc2"><div class="sic">&#128202;</div><div class="stl">Leadership &amp; Management</div><div class="tags2"><span class="tag">IT Operations</span><span class="tag">Vendor Management</span><span class="tag">Team Mentoring</span><span class="tag">Project Management</span><span class="tag">Digital Transformation</span><span class="tag">BCDR</span></div></div>
+    <div class="skills-grid reveal">
+      <div class="skill-cell"><div class="sk-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="sk-title">Cybersecurity &amp; GRC</div><div class="tags"><span class="tag">CISSP</span><span class="tag">Zero Trust</span><span class="tag">Risk Management</span><span class="tag">Incident Response</span><span class="tag">Compliance</span><span class="tag">IT Auditing</span></div></div>
+      <div class="skill-cell"><div class="sk-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div class="sk-title">Microsoft Azure &amp; M365</div><div class="tags"><span class="tag">Entra ID</span><span class="tag">Intune MDM</span><span class="tag">Defender Suite</span><span class="tag">Sentinel SIEM</span><span class="tag">Purview</span><span class="tag">Azure AVD</span></div></div>
+      <div class="skill-cell"><div class="sk-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div class="sk-title">Network &amp; Systems</div><div class="tags"><span class="tag">Cisco Catalyst</span><span class="tag">FortiGate</span><span class="tag">CheckPoint</span><span class="tag">Network Design</span><span class="tag">Windows Server</span><span class="tag">Red Hat Linux</span></div></div>
+      <div class="skill-cell"><div class="sk-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="sk-title">Security Tooling</div><div class="tags"><span class="tag">Microsoft XDR</span><span class="tag">Forescout NAC</span><span class="tag">Arcon PAM</span><span class="tag">Nessus / Tenable</span><span class="tag">Cisco AMP</span><span class="tag">WAF</span></div></div>
+      <div class="skill-cell"><div class="sk-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="sk-title">Infrastructure &amp; Virtualisation</div><div class="tags"><span class="tag">Dell EMC VxRail</span><span class="tag">VMware ESXi</span><span class="tag">Hyper-V</span><span class="tag">Cisco Hyperflux</span><span class="tag">Veeam</span><span class="tag">Backup &amp; DR</span></div></div>
+      <div class="skill-cell"><div class="sk-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="sk-title">Leadership &amp; Management</div><div class="tags"><span class="tag">IT Operations</span><span class="tag">Vendor Management</span><span class="tag">Team Mentoring</span><span class="tag">Project Management</span><span class="tag">Digital Transformation</span><span class="tag">BCDR</span></div></div>
     </div>
   </div>
 </section>
 
-<hr>
+<hr class="div-line">
 
 <!-- EXPERIENCE -->
 <section id="experience" class="sec">
-  <div class="inn">
-    <div class="sh">
-      <div class="stag">Career</div>
-      <h2 class="sttl">Professional Experience</h2>
-      <p class="ssub">10+ years building and securing enterprise infrastructure &mdash; from first cybersecurity programmes to multi-entity cloud transformations across the UAE.</p>
+  <div class="wrap">
+    <div class="s-num">03</div>
+    <div class="s-head reveal">
+      <div class="s-tag">Career</div>
+      <h2 class="s-title">Professional Experience</h2>
+      <p class="s-sub">10+ years building and securing enterprise infrastructure &mdash; from first cybersecurity programmes to multi-entity cloud transformations across the UAE.</p>
     </div>
-    <div class="el">
-
-      <div class="ei">
-        <div>
-          <div class="ep">Jun 2025 &ndash; Present</div>
-          <div class="ebdg">Current Role</div>
-          <div class="et">UAE &middot; Holding Group<br>Greenfield Environment</div>
-        </div>
-        <div>
-          <div class="erol">Infrastructure &amp; Cloud Lead</div>
-          <p class="esum">Leading infrastructure and cloud architecture for a multi-entity UAE Holding Group &mdash; designing greenfield environments with a security-first, cloud-native approach across Microsoft&#8217;s full enterprise stack.</p>
-          <ul class="epts">
-            <li>Architected <strong>Azure Entra ID, Intune MDM, and Defender security suite</strong> &mdash; establishing a unified identity and endpoint management baseline across multiple entities</li>
-            <li>Implemented <strong>Zero Trust framework</strong> with MFA, Conditional Access policies, and network segmentation &mdash; significantly reducing the organisation&#8217;s attack surface</li>
-            <li>Led greenfield infrastructure design across compute, network, and security layers &mdash; delivering a scalable, enterprise-grade foundation aligned to business objectives</li>
-            <li>Providing technical mentoring to the infrastructure team and aligning technology strategy with commercial priorities</li>
-          </ul>
-        </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-dot"></div>
+        <div class="tl-left"><div class="tl-date">Jun 2025 &ndash; Present</div><div class="tl-badge">Current Role</div><div class="tl-meta">UAE &middot; Holding Group<br>Greenfield Environment</div></div>
+        <div><div class="tl-role">Infrastructure &amp; Cloud Lead</div><p class="tl-sum">Leading infrastructure and cloud architecture for a multi-entity UAE Holding Group &mdash; designing greenfield environments with a security-first, cloud-native approach across Microsoft&#8217;s full enterprise stack.</p><ul class="tl-pts"><li>Architected <strong>Azure Entra ID, Intune MDM, and Defender security suite</strong> &mdash; establishing a unified identity and endpoint management baseline across multiple entities</li><li>Implemented <strong>Zero Trust framework</strong> with MFA, Conditional Access policies, and network segmentation &mdash; significantly reducing the organisation&#8217;s attack surface</li><li>Led greenfield infrastructure design across compute, network, and security layers &mdash; delivering a scalable, enterprise-grade foundation aligned to business objectives</li><li>Providing technical mentoring to the infrastructure team and aligning technology strategy with commercial priorities</li></ul></div>
       </div>
-
-      <div class="ei">
-        <div>
-          <div class="ep">Apr 2023 &ndash; May 2025</div>
-          <div class="et">UAE Enterprise<br>2 years 2 months</div>
-        </div>
-        <div>
-          <div class="erol">Infrastructure Specialist</div>
-          <p class="esum">Enhanced enterprise security posture through full Microsoft 365 and Azure security suite deployment, and led a critical datacentre modernisation programme.</p>
-          <ul class="epts">
-            <li>Deployed <strong>Defender for Cloud, XDR, Sentinel SIEM, and Microsoft Purview</strong> &mdash; building a cohesive, integrated threat detection and compliance platform</li>
-            <li>Configured <strong>DLP, compliance, and privacy management policies</strong> across M365 with Azure Application Gateways and WAF &mdash; ensuring full regulatory alignment</li>
-            <li>Led <strong>VxRail datacentre migration</strong> managing 100+ virtual servers with minimal downtime and seamless transition throughout</li>
-            <li>Identified and decommissioned outdated infrastructure, optimising performance and reducing the overall attack surface</li>
-          </ul>
-        </div>
+      <div class="tl-item reveal"><div class="tl-dot"></div>
+        <div class="tl-left"><div class="tl-date">Apr 2023 &ndash; May 2025</div><div class="tl-meta">UAE Enterprise<br>2 years 2 months</div></div>
+        <div><div class="tl-role">Infrastructure Specialist</div><p class="tl-sum">Enhanced enterprise security posture through full Microsoft 365 and Azure security suite deployment, and led a critical datacentre modernisation programme.</p><ul class="tl-pts"><li>Deployed <strong>Defender for Cloud, XDR, Sentinel SIEM, and Microsoft Purview</strong> &mdash; building a cohesive, integrated threat detection and compliance platform</li><li>Configured <strong>DLP, compliance, and privacy management policies</strong> across M365 with Azure Application Gateways and WAF &mdash; ensuring full regulatory alignment</li><li>Led <strong>VxRail datacentre migration</strong> managing 100+ virtual servers with minimal downtime and seamless transition throughout</li><li>Identified and decommissioned outdated infrastructure, optimising performance and reducing the overall attack surface</li></ul></div>
       </div>
-
-      <div class="ei">
-        <div>
-          <div class="ep">Mar 2022 &ndash; Apr 2023</div>
-          <div class="et">UAE Enterprise<br>1 year 2 months</div>
-        </div>
-        <div>
-          <div class="erol">IT Infrastructure Engineer</div>
-          <ul class="epts">
-            <li>Managed <strong>100+ virtual servers</strong> across cloud and on-premises environments with high availability maintained throughout</li>
-            <li>Optimised customer-facing revenue system integrations and implemented <strong>network failover architecture</strong> for business-critical applications</li>
-          </ul>
-        </div>
+      <div class="tl-item reveal"><div class="tl-dot"></div>
+        <div class="tl-left"><div class="tl-date">Mar 2022 &ndash; Apr 2023</div><div class="tl-meta">UAE Enterprise<br>1 year 2 months</div></div>
+        <div><div class="tl-role">IT Infrastructure Engineer</div><ul class="tl-pts"><li>Managed <strong>100+ virtual servers</strong> across cloud and on-premises environments with high availability maintained throughout</li><li>Optimised customer-facing revenue system integrations and implemented <strong>network failover architecture</strong> for business-critical applications</li></ul></div>
       </div>
-
-      <div class="ei">
-        <div>
-          <div class="ep">Apr 2019 &ndash; Feb 2022</div>
-          <div class="et">UAE Enterprise<br>2 years 11 months</div>
-        </div>
-        <div>
-          <div class="erol">IT Infrastructure Engineer</div>
-          <ul class="epts">
-            <li>Established a comprehensive <strong>cybersecurity programme</strong> aligned to organisational strategy &mdash; the first formalised security posture for the organisation</li>
-            <li>Deployed <strong>Forescout NAC and CheckPoint Next Gen firewall</strong> with 30+ IDFs and full DR setup with real-time server replication</li>
-            <li>Designed and delivered an <strong>ANPR-based smart parking system</strong> &mdash; end-to-end IoT integration for VIP and valet operations</li>
-            <li>Implemented <strong>centralised backup using Veeam</strong> with daily disk and monthly tape backup across the entire datacentre</li>
-          </ul>
-        </div>
+      <div class="tl-item reveal"><div class="tl-dot"></div>
+        <div class="tl-left"><div class="tl-date">Apr 2019 &ndash; Feb 2022</div><div class="tl-meta">UAE Enterprise<br>2 years 11 months</div></div>
+        <div><div class="tl-role">IT Infrastructure Engineer</div><ul class="tl-pts"><li>Established a comprehensive <strong>cybersecurity programme</strong> aligned to organisational strategy &mdash; the first formalised security posture for the organisation</li><li>Deployed <strong>Forescout NAC and CheckPoint Next Gen firewall</strong> with 30+ IDFs and full DR setup with real-time server replication</li><li>Designed and delivered an <strong>ANPR-based smart parking system</strong> &mdash; end-to-end IoT integration for VIP and valet operations</li><li>Implemented <strong>centralised backup using Veeam</strong> with daily disk and monthly tape backup across the entire datacentre</li></ul></div>
       </div>
-
-      <div class="ei">
-        <div>
-          <div class="ep">Oct 2016 &ndash; Apr 2019</div>
-          <div class="et">UAE<br>2 years 7 months</div>
-        </div>
-        <div>
-          <div class="erol">Support Engineer &mdash; ICT &amp; Cloud</div>
-          <ul class="epts">
-            <li>Executed <strong>Office 365 migration for 1,400+ users</strong> &mdash; Zimbra to O365 and tenant-to-tenant migration, delivered with no critical incidents</li>
-            <li>Managed Exchange and Active Directory infrastructure across Windows Server 2003&#8211;2016 environments</li>
-            <li>Implemented <strong>VMware ESXi and Hyper-V virtualisation</strong>, including VMotion, Cluster HA, and server consolidation</li>
-            <li>Delivered major projects including a <strong>250-camera CCTV and 250 access-point backend infrastructure</strong> for Dubai Water Canal</li>
-          </ul>
-        </div>
+      <div class="tl-item reveal"><div class="tl-dot"></div>
+        <div class="tl-left"><div class="tl-date">Oct 2016 &ndash; Apr 2019</div><div class="tl-meta">UAE<br>2 years 7 months</div></div>
+        <div><div class="tl-role">Support Engineer &mdash; ICT &amp; Cloud</div><ul class="tl-pts"><li>Executed <strong>Office 365 migration for 1,400+ users</strong> &mdash; Zimbra to O365 and tenant-to-tenant migration, delivered with no critical incidents</li><li>Managed Exchange and Active Directory infrastructure across Windows Server 2003&#8211;2016 environments</li><li>Implemented <strong>VMware ESXi and Hyper-V virtualisation</strong>, including VMotion, Cluster HA, and server consolidation</li><li>Delivered major projects including a <strong>250-camera CCTV and 250 access-point backend infrastructure</strong> for Dubai Water Canal</li></ul></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<hr>
+<hr class="div-line">
 
 <!-- CERTIFICATIONS -->
-<section id="certifications" class="sec sa">
-  <div class="inn">
-    <div class="sh">
-      <div class="stag">Credentials</div>
-      <h2 class="sttl">Professional Certifications</h2>
-      <p class="ssub">A multi-disciplinary certification portfolio spanning information security, Microsoft cloud, networking, and enterprise systems engineering.</p>
+<section id="certifications" class="sec sec-alt">
+  <div class="wrap">
+    <div class="s-num">04</div>
+    <div class="s-head reveal">
+      <div class="s-tag">Credentials</div>
+      <h2 class="s-title">Professional Certifications</h2>
+      <p class="s-sub">A multi-disciplinary portfolio spanning information security, Microsoft cloud, networking, and enterprise systems engineering.</p>
     </div>
-    <div class="cg">
-      <div class="cc"><div class="cico">&#128272;</div><div><div class="ccnm">CISSP</div><div class="ccbd">ISC&sup2; &middot; Certified Information Systems Security Professional</div><div class="ccst">Core Credential &middot; Active</div></div></div>
-      <div class="cc"><div class="cico">&#9729;</div><div><div class="ccnm">AZ-900</div><div class="ccbd">Microsoft &middot; Azure Fundamentals</div><div class="ccst">Earned</div></div></div>
-      <div class="cc"><div class="cico">&#128737;</div><div><div class="ccnm">SC-900</div><div class="ccbd">Microsoft &middot; Security, Compliance &amp; Identity Fundamentals</div><div class="ccst">Earned</div></div></div>
-      <div class="cc"><div class="cico">&#128187;</div><div><div class="ccnm">MCSE</div><div class="ccbd">Microsoft &middot; Cloud Platform &amp; Infrastructure &nbsp;+&nbsp; MCSA Windows Server 2016</div><div class="ccst">Certified 2018</div></div></div>
-      <div class="cc"><div class="cico">&#127760;</div><div><div class="ccnm">CCNA</div><div class="ccbd">Cisco &middot; Certified Network Associate</div><div class="ccst">Earned</div></div></div>
-      <div class="cc"><div class="cico">&#128039;</div><div><div class="ccnm">RHCE</div><div class="ccbd">Red Hat &middot; Certified Engineer</div><div class="ccst">Earned</div></div></div>
+    <div class="cert-grid reveal">
+      <div class="cert-card featured"><div class="cert-ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div><div class="cert-name">CISSP</div><div class="cert-body">ISC&sup2; &middot; Certified Information Systems Security Professional</div><span class="cert-st active">Core Credential &middot; Active</span></div></div>
+      <div class="cert-card"><div class="cert-ico"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="cert-name">AZ-900</div><div class="cert-body">Microsoft &middot; Azure Fundamentals</div><span class="cert-st earned">Earned</span></div></div>
+      <div class="cert-card"><div class="cert-ico"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div><div class="cert-name">SC-900</div><div class="cert-body">Microsoft &middot; Security, Compliance &amp; Identity Fundamentals</div><span class="cert-st earned">Earned</span></div></div>
+      <div class="cert-card"><div class="cert-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div><div class="cert-name">MCSE</div><div class="cert-body">Microsoft &middot; Cloud Platform &amp; Infrastructure + MCSA Windows Server 2016</div><span class="cert-st earned">Certified 2018</span></div></div>
+      <div class="cert-card"><div class="cert-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="cert-name">CCNA</div><div class="cert-body">Cisco &middot; Certified Network Associate</div><span class="cert-st earned">Earned</span></div></div>
+      <div class="cert-card"><div class="cert-ico"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div><div class="cert-name">RHCE</div><div class="cert-body">Red Hat &middot; Certified Engineer</div><span class="cert-st earned">Earned</span></div></div>
     </div>
   </div>
 </section>
 
-<hr>
+<hr class="div-line">
 
 <!-- INITIATIVES -->
 <section id="initiatives" class="sec">
-  <div class="inn">
-    <div class="sh">
-      <div class="stag">Featured Work</div>
-      <h2 class="sttl">Key Infrastructure Initiatives</h2>
-      <p class="ssub">Selected enterprise programmes delivered across UAE organisations &mdash; built to last, not just to launch.</p>
+  <div class="wrap">
+    <div class="s-num">05</div>
+    <div class="s-head reveal">
+      <div class="s-tag">Featured Work</div>
+      <h2 class="s-title">Key Infrastructure Initiatives</h2>
+      <p class="s-sub">Selected enterprise programmes delivered across UAE organisations &mdash; built to last, not just to launch.</p>
     </div>
-    <div class="ig">
-
-      <div class="ic">
-        <div class="icat">Zero Trust</div>
-        <div class="ittl">Enterprise Zero Trust Architecture &mdash; UAE Holding Group</div>
-        <div class="idsc">Designed and deployed a comprehensive Zero Trust framework across a multi-entity holding group &mdash; covering identity governance, endpoint compliance, network segmentation, and continuous verification using the full Microsoft Entra &amp; Defender stack.</div>
-        <div class="ist"><div><div class="isv">500<span>+</span></div><div class="isl">Endpoints Protected</div></div><div><div class="isv">Zero</div><div class="isl">Critical Incidents Post-Deploy</div></div></div>
-        <div class="tgr"><span class="tag">Entra ID</span><span class="tag">Intune MDM</span><span class="tag">Conditional Access</span><span class="tag">Defender</span><span class="tag">MFA</span></div>
-      </div>
-
-      <div class="ic">
-        <div class="icat">Security &middot; SIEM</div>
-        <div class="ittl">Microsoft Security Stack &mdash; XDR, Sentinel &amp; Purview Integration</div>
-        <div class="idsc">Deployed and integrated Defender for Cloud, XDR, Sentinel SIEM, and Purview into a cohesive security operations platform &mdash; configuring DLP, compliance, and privacy management policies aligned with UAE regulatory requirements.</div>
-        <div class="ist"><div><div class="isv">4</div><div class="isl">Integrated Security Layers</div></div><div><div class="isv">Real<span>-time</span></div><div class="isl">Threat Detection</div></div></div>
-        <div class="tgr"><span class="tag">Defender for Cloud</span><span class="tag">XDR</span><span class="tag">Sentinel</span><span class="tag">Purview</span><span class="tag">DLP</span></div>
-      </div>
-
-      <div class="ic">
-        <div class="icat">Datacentre &middot; Migration</div>
-        <div class="ittl">VxRail Datacentre Migration &mdash; 100+ Virtual Servers</div>
-        <div class="idsc">Led a full datacentre migration to VxRail hyperconverged infrastructure &mdash; managing 100+ virtual servers with zero critical incidents and full business continuity maintained throughout the transition window.</div>
-        <div class="ist"><div><div class="isv">100<span>+</span></div><div class="isl">VMs Migrated</div></div><div><div class="isv">Zero</div><div class="isl">Critical Incidents</div></div></div>
-        <div class="tgr"><span class="tag">VxRail</span><span class="tag">VMware</span><span class="tag">Hyper-V</span><span class="tag">Storage</span><span class="tag">Networking</span></div>
-      </div>
-
-      <div class="ic">
-        <div class="icat">M365 &middot; Migration</div>
-        <div class="ittl">Office 365 Enterprise Migration &mdash; 1,400+ Users</div>
-        <div class="idsc">Planned and executed a large-scale Office 365 migration &mdash; Zimbra to O365 and tenant-to-tenant covering 1,400+ users, including Exchange, Active Directory synchronisation, and user change management. Zero critical failures.</div>
-        <div class="ist"><div><div class="isv">1,400<span>+</span></div><div class="isl">Users Migrated</div></div><div><div class="isv">Zero</div><div class="isl">Critical Failures</div></div></div>
-        <div class="tgr"><span class="tag">Microsoft 365</span><span class="tag">Exchange</span><span class="tag">Active Directory</span><span class="tag">Azure AD Connect</span></div>
-      </div>
-
-      <div class="ic">
-        <div class="icat">Network &middot; Security</div>
-        <div class="ittl">Enterprise Network &amp; NAC &mdash; 30+ IDFs with Failover</div>
-        <div class="idsc">Built and secured enterprise network infrastructure across 30+ IDFs with full failover architecture, Forescout NAC for access control, and CheckPoint Next Gen firewall &mdash; protecting against internal and external threats across a large public-facing environment.</div>
-        <div class="ist"><div><div class="isv">30<span>+</span></div><div class="isl">IDFs with Failover</div></div><div><div class="isv">NAC</div><div class="isl">Access Control Active</div></div></div>
-        <div class="tgr"><span class="tag">Forescout NAC</span><span class="tag">CheckPoint</span><span class="tag">Cisco Catalyst</span><span class="tag">FortiGate</span><span class="tag">Network Design</span></div>
-      </div>
-
-      <div class="ic">
-        <div class="icat">IoT &middot; Smart Systems</div>
-        <div class="ittl">ANPR Smart Parking System &mdash; End-to-End IoT Integration</div>
-        <div class="idsc">Designed and delivered an Automatic Number Plate Recognition smart parking system for VIP and valet operations &mdash; integrating IoT hardware, network infrastructure, and software systems end-to-end across a large public venue environment.</div>
-        <div class="ist"><div><div class="isv">IoT</div><div class="isl">OT Integration</div></div><div><div class="isv">E2E</div><div class="isl">Full Delivery</div></div></div>
-        <div class="tgr"><span class="tag">ANPR</span><span class="tag">IoT Systems</span><span class="tag">Network Integration</span><span class="tag">Systems Architecture</span></div>
-      </div>
-
+    <div class="init-grid">
+      <div class="init-card reveal"><div class="init-cat">Zero Trust</div><div class="init-title">Enterprise Zero Trust Architecture &mdash; UAE Holding Group</div><div class="init-desc">Designed and deployed a comprehensive Zero Trust framework across a multi-entity holding group &mdash; covering identity governance, endpoint compliance, network segmentation, and continuous verification using the full Microsoft Entra &amp; Defender stack.</div><div class="init-stats"><div><div class="i-val">500<em>+</em></div><div class="i-lbl">Endpoints Protected</div></div><div><div class="i-val">Zero</div><div class="i-lbl">Critical Incidents Post-Deploy</div></div></div><div class="init-tags"><span class="tag">Entra ID</span><span class="tag">Intune MDM</span><span class="tag">Conditional Access</span><span class="tag">Defender</span><span class="tag">MFA</span></div></div>
+      <div class="init-card reveal rd1"><div class="init-cat">Security &middot; SIEM</div><div class="init-title">Microsoft Security Stack &mdash; XDR, Sentinel &amp; Purview Integration</div><div class="init-desc">Deployed and integrated Defender for Cloud, XDR, Sentinel SIEM, and Purview into a cohesive security operations platform &mdash; configuring DLP, compliance, and privacy management policies aligned with UAE regulatory requirements.</div><div class="init-stats"><div><div class="i-val">4</div><div class="i-lbl">Integrated Security Layers</div></div><div><div class="i-val">Real<em>-time</em></div><div class="i-lbl">Threat Detection</div></div></div><div class="init-tags"><span class="tag">Defender for Cloud</span><span class="tag">XDR</span><span class="tag">Sentinel</span><span class="tag">Purview</span><span class="tag">DLP</span></div></div>
+      <div class="init-card reveal"><div class="init-cat">Datacentre &middot; Migration</div><div class="init-title">VxRail Datacentre Migration &mdash; 100+ Virtual Servers</div><div class="init-desc">Led a full datacentre migration to VxRail hyperconverged infrastructure &mdash; managing 100+ virtual servers with zero critical incidents and full business continuity maintained throughout the transition window.</div><div class="init-stats"><div><div class="i-val">100<em>+</em></div><div class="i-lbl">VMs Migrated</div></div><div><div class="i-val">Zero</div><div class="i-lbl">Critical Incidents</div></div></div><div class="init-tags"><span class="tag">VxRail</span><span class="tag">VMware</span><span class="tag">Hyper-V</span><span class="tag">Storage</span><span class="tag">Networking</span></div></div>
+      <div class="init-card reveal rd1"><div class="init-cat">M365 &middot; Migration</div><div class="init-title">Office 365 Enterprise Migration &mdash; 1,400+ Users</div><div class="init-desc">Planned and executed a large-scale Office 365 migration &mdash; Zimbra to O365 and tenant-to-tenant covering 1,400+ users, including Exchange, Active Directory synchronisation, and user change management. Zero critical failures.</div><div class="init-stats"><div><div class="i-val">1,400<em>+</em></div><div class="i-lbl">Users Migrated</div></div><div><div class="i-val">Zero</div><div class="i-lbl">Critical Failures</div></div></div><div class="init-tags"><span class="tag">Microsoft 365</span><span class="tag">Exchange</span><span class="tag">Active Directory</span><span class="tag">Azure AD Connect</span></div></div>
+      <div class="init-card reveal"><div class="init-cat">Network &middot; Security</div><div class="init-title">Enterprise Network &amp; NAC &mdash; 30+ IDFs with Failover</div><div class="init-desc">Built and secured enterprise network infrastructure across 30+ IDFs with full failover architecture, Forescout NAC for access control, and CheckPoint Next Gen firewall &mdash; protecting against internal and external threats across a large public-facing environment.</div><div class="init-stats"><div><div class="i-val">30<em>+</em></div><div class="i-lbl">IDFs with Failover</div></div><div><div class="i-val">NAC</div><div class="i-lbl">Access Control Active</div></div></div><div class="init-tags"><span class="tag">Forescout NAC</span><span class="tag">CheckPoint</span><span class="tag">Cisco Catalyst</span><span class="tag">FortiGate</span><span class="tag">Network Design</span></div></div>
+      <div class="init-card reveal rd1"><div class="init-cat">IoT &middot; Smart Systems</div><div class="init-title">ANPR Smart Parking System &mdash; End-to-End IoT Integration</div><div class="init-desc">Designed and delivered an Automatic Number Plate Recognition smart parking system for VIP and valet operations &mdash; integrating IoT hardware, network infrastructure, and software systems end-to-end across a large public venue environment.</div><div class="init-stats"><div><div class="i-val">IoT</div><div class="i-lbl">OT Integration</div></div><div><div class="i-val">E2E</div><div class="i-lbl">Full Delivery</div></div></div><div class="init-tags"><span class="tag">ANPR</span><span class="tag">IoT Systems</span><span class="tag">Network Integration</span><span class="tag">Systems Architecture</span></div></div>
     </div>
   </div>
 </section>
 
-<hr>
+<hr class="div-line">
 
 <!-- CONTACT -->
-<section id="contact" class="sec sa">
-  <div class="inn">
-    <div class="cong">
-      <div>
-        <div class="stag" style="margin-bottom:14px;">Contact</div>
-        <h2 class="conh">Let&#8217;s Build<br>Something <em>Secure.</em></h2>
-        <p class="conp">Available for conversations around enterprise cloud architecture, cybersecurity strategy, Zero Trust implementations, and advisory engagements across the UAE and beyond.</p>
-        <div class="conl">
-          <a class="clnk" href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#97;&#105;&#108;&#64;&#97;&#102;&#115;&#97;&#108;&#46;&#116;&#101;&#99;&#104;">
-            <div class="clic">&#9993;</div><div><div class="cllb">Email</div><div class="clvl">mail [at] afsal.tech</div></div>
-          </a>
-          <a class="clnk" href="tel:+971559412326">
-            <div class="clic">&#128241;</div><div><div class="cllb">Phone / WhatsApp</div><div class="clvl">+971 55 941 2326</div></div>
-          </a>
-          <a class="clnk" href="https://linkedin.com/in/afsalpallikkara" target="_blank" rel="noopener">
-            <div class="clic">&#128188;</div><div><div class="cllb">LinkedIn</div><div class="clvl">linkedin.com/in/afsalpallikkara</div></div>
-          </a>
-          <a class="clnk" href="https://afsal.tech">
-            <div class="clic">&#127758;</div><div><div class="cllb">Website</div><div class="clvl">afsal.tech</div></div>
-          </a>
+<section id="contact" class="sec sec-alt">
+  <div class="wrap">
+    <div class="s-num">06</div>
+    <div class="con-split">
+      <div class="reveal">
+        <div class="s-tag" style="margin-bottom:14px">Contact</div>
+        <h2 class="con-title">Let&#8217;s Build<br>Something <em>Secure.</em></h2>
+        <p class="con-sub">Available for conversations around enterprise cloud architecture, cybersecurity strategy, Zero Trust implementations, and advisory engagements across the UAE and beyond.</p>
+        <div class="con-links">
+          <a class="con-link" href="mailto:mail@afsal.tech"><div class="con-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><div class="con-lbl">Email</div><div class="con-val">mail@afsal.tech</div></div></a>
+          <a class="con-link" href="tel:+971559412326"><div class="con-ico"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="con-lbl">Phone / WhatsApp</div><div class="con-val">+971 55 941 2326</div></div></a>
+          <a class="con-link" href="https://linkedin.com/in/afsalpallikkara" target="_blank" rel="noopener"><div class="con-ico"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div><div><div class="con-lbl">LinkedIn</div><div class="con-val">linkedin.com/in/afsalpallikkara</div></div></a>
+          <a class="con-link" href="https://afsal.tech"><div class="con-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><div><div class="con-lbl">Website</div><div class="con-val">afsal.tech</div></div></a>
         </div>
       </div>
-      <div class="adv">
-        <div class="at">
-          <div class="pr"><div class="pd"></div><span class="pl">Open to Advisory</span></div>
-          <div class="attl">Available for Consulting Engagements</div>
-          <div class="abdy">Beyond my primary role, I am selectively available for strategic advisory and consulting in my core areas of expertise.</div>
-        </div>
-        <div class="ai">
-          <div class="ait">Zero Trust Architecture Review &amp; Design</div>
-          <div class="ait">Microsoft Azure Infrastructure Advisory</div>
-          <div class="ait">Cloud Security Posture Assessment</div>
-          <div class="ait">Enterprise M365 &amp; Defender Deployment</div>
-          <div class="ait">Cybersecurity Programme Development</div>
-        </div>
-        <div class="af">
-          <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#109;&#97;&#105;&#108;&#64;&#97;&#102;&#115;&#97;&#108;&#46;&#116;&#101;&#99;&#104;" class="bw">Get In Touch &rarr;</a>
-        </div>
+      <div class="adv-panel reveal rd2">
+        <div class="adv-top"><div class="adv-status"><div class="adv-dot"></div><span class="adv-avail">Open to Advisory</span></div><div class="adv-t">Available for Consulting Engagements</div><div class="adv-d">Beyond my primary role, I am selectively available for strategic advisory and consulting in my core areas of expertise.</div></div>
+        <div class="adv-items"><div class="adv-item">Zero Trust Architecture Review &amp; Design</div><div class="adv-item">Microsoft Azure Infrastructure Advisory</div><div class="adv-item">Cloud Security Posture Assessment</div><div class="adv-item">Enterprise M365 &amp; Defender Deployment</div><div class="adv-item">Cybersecurity Programme Development</div></div>
+        <div class="adv-btn-wrap"><a href="mailto:mail@afsal.tech" class="adv-btn">Get In Touch &rarr;</a></div>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="fb">Afsal <span>Pallikkara</span></div>
-  <div class="fc">&copy; 2026 Afsal Pallikkara. All rights reserved.</div>
-  <ul class="fn">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#certifications">Credentials</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+  <div class="f-brand">Afsal <em>Pallikkara</em></div>
+  <div class="f-copy">&copy; 2026 Afsal Pallikkara. All rights reserved.</div>
+  <ul class="f-nav"><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#certifications">Credentials</a></li><li><a href="#contact">Contact</a></li></ul>
 </footer>
 
 <script>
-var nav=document.getElementById('nav');
-window.addEventListener('scroll',function(){nav.classList.toggle('sc',window.scrollY>40);},{passive:true});
+// Smart nav — transparent over dark hero, light glass over content
+(function(){
+  var nav=document.getElementById('nav');
+  var heroH=document.getElementById('hero').offsetHeight;
+  function upd(){
+    var y=window.scrollY;
+    if(y<heroH-80){nav.classList.remove('light');nav.classList.toggle('sc',y>40);}
+    else{nav.classList.remove('sc');nav.classList.add('light');}
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  upd();
+})();
+
+// Hamburger
+(function(){
+  var btn=document.getElementById('hbg'),mob=document.getElementById('mobnav');
+  btn.addEventListener('click',function(){btn.classList.toggle('open');mob.classList.toggle('open');});
+  document.querySelectorAll('.ml').forEach(function(a){a.addEventListener('click',function(){btn.classList.remove('open');mob.classList.remove('open');});});
+})();
+
+// Scroll reveal
+(function(){
+  var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.06,rootMargin:'0px 0px -32px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  // Hero fires immediately with stagger
+  document.querySelectorAll('#hero .reveal').forEach(function(el,i){setTimeout(function(){el.classList.add('visible');},80+i*140);});
+})();
 </script>
 </body>
 </html>
